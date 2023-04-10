@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Entity
 public class Movie {
@@ -23,6 +25,10 @@ public class Movie {
     private String title;
     private String genre;
     private int year;
+
+    @Min(value = 1, message = "Review must be at least 1")
+    @Max(value = 5, message = "Review must be at most 5")
+    private int review;
 
     public long getId() {
         return id;

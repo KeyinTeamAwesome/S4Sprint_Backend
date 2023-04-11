@@ -9,12 +9,8 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "movie", path = "movie")
-// DT ADDED April 10, 2023 - @Transactional
-@Transactional
 public interface MovieAPIService extends JpaRepository<Movie, Long> {
 
-    // DT added April 10, 2023 public List<Movie> findAll();
-    public List<Movie> findAll();
 
     public List<Movie> findByTitle(@Param("title") String title);
     public List<Movie> findByGenre(@Param("genre")String genre);

@@ -1,9 +1,6 @@
 package com.keyin.rest.api;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
@@ -18,8 +15,10 @@ public class Movie {
     }
 */
 @Id
-    @SequenceGenerator(name = "movie_sequence", sequenceName = "movie_sequence", allocationSize = 1, initialValue = 2)
-    @GeneratedValue(generator = "movie_sequence")
+//    @SequenceGenerator(name = "movie_sequence", sequenceName = "movie_sequence", allocationSize = 1, initialValue = 1)
+//    @GeneratedValue(generator = "movie_sequence")
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
     private String title;

@@ -1,4 +1,53 @@
-INSERT INTO movies (title, genre, review) VALUES (NEXTVAL('movie_sequence'), 'Kara Is Queen', 'Drama', 1);
+--This style is to compliment the schema.sql file
+INSERT INTO movie (genre, review, title, year) VALUES ('Comedy', 1, 'A', 1981);
+INSERT INTO movie (genre, review, title, year) VALUES ('Drama', 2, 'B', 1984);
+INSERT INTO movie (genre, review, title, year) VALUES ('Satire', 3, 'C', 1987);
+INSERT INTO movie (genre, review, title, year) VALUES ('Horror', 4, 'D', 1990);
+INSERT INTO movie (genre, review, title, year) VALUES ('Romance', 5, 'E', 1993);
+INSERT INTO movie (genre, review, title, year) VALUES ('Action', 5, 'Terminator', 1984);
+
+
+--null does not work for auto incrementing id
+--INSERT INTO movie (id, genre, review, title, year) VALUES (null, 'Comedy', 1, 'A', 1981);
+--INSERT INTO movie (id, genre, review, title, year) VALUES (null, 'Drama', 2, 'B', 1984);
+
+
+--THIS CODE WORKED START
+--INSERT INTO movie (id, genre, review, title, year) VALUES (1, 'Comedy', 1, 'A', 1981);
+--INSERT INTO movie (id, genre, review, title, year) VALUES (2, 'Drama', 2, 'B', 1984);
+--INSERT INTO movie (id, genre, review, title, year) VALUES (3, 'Satire', 3, 'C', 1987);
+--INSERT INTO movie (id, genre, review, title, year) VALUES (4, 'Horror', 4, 'D', 1990);
+--INSERT INTO movie (id, genre, review, title, year) VALUES (5, 'Romance', 5, 'E', 1993);
+--THIS CODE WORKED END
+
+--INSERT INTO movie (id. genre, review, title, year) VALUES (1,'Comedy', 1, 'A', 1981);
+--SET @last_id = LAST_INSERT_ID();
+--INSERT INTO movie (id, genre, review, title, year) VALUES (@last_id, 'Drama', 2, 'B', 1984);
+--SET @last_id = LAST_INSERT_ID();
+--INSERT INTO movie (id, genre, review, title, year) VALUES (@last_id, 'Satire', 3, 'C', 1987);
+--SET @last_id = LAST_INSERT_ID();
+--INSERT INTO movie (id, genre, review, title, year) VALUES (@last_id, 'Horror', 4, 'D', 1990);
+--SET @last_id = LAST_INSERT_ID();
+--INSERT INTO movie (id, genre, review, title, year) VALUES (@last_id, 'Romance', 5, 'E', 1993);
+--SET @last_id = LAST_INSERT_ID();
+
+
+--INSERT INTO movie (id, genre, review, title, year) VALUES (1, 'Drama', 1, 'Kara', 1950);
+--INSERT INTO movie (id, genre, review, title, year) VALUES (1, 'Drama', 1, 'Kara', 1950);
+
+--INSERT INTO movie (title, genre, review) VALUES ('Kara', 'Drama', 1);
+--INSERT INTO movie (title, genre, review) VALUES ('Kids Are All Right, The', 'Comedy', 3);
+--INSERT INTO movie (title, genre, review) VALUES ('Garden State', 'Romance', 4);
+
+--INSERT INTO movie (title, genre, review) VALUES ('Kara', 'Drama', 1);
+--SET @last_id = LAST_INSERT_ID();
+--INSERT INTO movie (id, title, genre, review) VALUES (@last_id, 'Kids Are All Right, The', 'Comedy', 3);
+--SET @last_id = LAST_INSERT_ID();
+--INSERT INTO movie (id, title, genre, review) VALUES (@last_id, 'Garden State', 'Romance', 4);
+
+--INSERT INTO movie (id, title, genre, review) VALUES (NEXTVAL('movie_sequence'), 'Kara Is Queen', 'Drama', 1);
+--INSERT INTO movie (id, title, genre, review) VALUES (NEXTVAL('movie_sequence'), 'Kids Are All Right, The', 'Comedy', 3);
+--INSERT INTO movie (id, title, genre, review) VALUES (NEXTVAL('movie_sequence'), 'Garden State', 'Romance', 4);
 --insert INTO movies (title, genre, review) values ('Rembrandt''s J''accuse', 'Documentary|Mystery', 3);
 --insert into movies (title, genre, review) values ('Nickelodeon', 'Comedy', 1);
 --insert into movies (title, genre, review) values ('Kids Are All Right, The', 'Comedy|Drama', 3);

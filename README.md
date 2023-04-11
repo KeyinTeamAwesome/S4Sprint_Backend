@@ -42,11 +42,11 @@ ________________________________________________________________________________
 |                 **GET**                 | Find by Title (Full Match)     | localhost:8080/movie/search/findByTitle           | ?title=\<*String*> |
 |                 **GET**                 | Find by Genre (Full Match)     | localhost:8080/movie/search/findByGenre           | ?genre=\<*String*> |
 |                 **GET**                 | Find by Year (Full Match)      | localhost:8080/movie/search/findByYear            | ?year=\<*int*>     |
-|                 **GET**                 | Find by Review (Full Match)    | localhost:8080/movie/search/findByYear            | ?review=\<*int*>   |
+|                 **GET**                 | Find by Review (Full Match)    | localhost:8080/movie/search/findByReview          | ?review=\<*int*>   |
 |                 **GET**                 | Find by Title (Partial Match)  | localhost:8080/movie/search/findByTitleContaining | ?title=\<*String*> |
 |                 **GET**                 | Find by Genre (Partial Match)  | localhost:8080/movie/search/findByGenreContaining | ?genre=\<*String*> |
 |                 **GET**                 | Find by Year (Partial Match)   | localhost:8080/movie/search/findByYearContaining  | ?year=\<*int*>     |
-|                 **GET**                 | Find by Review (Partial Match) | localhost:8080/movie/search/findByYear            | ?review=\<*int*>   |
+|                 **GET**                 | Find by Review (Partial Match) | localhost:8080/movie/search/findByReview          | ?review=\<*int*>   |
 |                 **POST**                |                                | localhost:8080/movie                              |                    |
 |                 **PUT**                 |                                | localhost:8080/movie/{id}                         |                    |
 |                **PATCH**                |                                | localhost:8080/movie/{id}                         |                    |

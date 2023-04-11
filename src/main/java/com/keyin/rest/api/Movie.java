@@ -23,7 +23,7 @@ public class Movie {
     private long id;
     private String title;
     private String genre;
-    private int year;
+//    private int year;
 
     @Min(value = 1, message = "Review must be at least 1")
     @Max(value = 5, message = "Review must be at most 5")
@@ -53,13 +53,13 @@ public class Movie {
         this.genre = genre;
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
+//    public int getYear() {
+//        return year;
+//    }
+//
+//    public void setYear(int year) {
+//        this.year = year;
+//    }
 
     public int getReview() {
         return review;

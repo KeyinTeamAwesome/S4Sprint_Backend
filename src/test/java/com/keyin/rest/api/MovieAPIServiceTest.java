@@ -55,13 +55,13 @@ public class MovieAPIServiceTest {
 
         // Assert that the first movie's title is "The Godfather"
         assertEquals("The Godfather", movies.get(0).getTitle());
-        System.out.println("\nMovie 1:");
+        System.out.println("\nMovie 1's Title:");
         System.out.println("\tExpected: \tThe Godfather");
         System.out.println("\tActual: \t" + movies.get(0).getTitle());
 
         // Assert that the second movie's title is "The Shawshank Redemption"
         assertEquals("The Shawshank Redemption", movies.get(1).getTitle());
-        System.out.println("Movie 1:");
+        System.out.println("Movie 1's Title:");
         System.out.println("\tExpected: \tThe Shawshank Redemption");
         System.out.println("\tActual: \t" + movies.get(1).getTitle() + "\n");
     }
@@ -97,13 +97,13 @@ public class MovieAPIServiceTest {
         // Assert that the returned list has size of 2
         assertEquals(2, movies.size());
 
-        // Assert that the first movie's genre is "The Godfather"
+        // Assert that the first movie's genre is "Horror|Comedy"
         assertEquals("Horror|Comedy", movies.get(0).getGenre());
-        System.out.println("\nMovie 1:");
+        System.out.println("\nMovie 1's Genre:");
         System.out.println("\tExpected: \tHorror|Comedy");
         System.out.println("\tActual: \t" + movies.get(0).getGenre());
 
-        // Assert that the second movie's genre is "The Shawshank Redemption"
+        // Assert that the second movie's genre is "Satire|Comedy"
         assertEquals("Satire|Comedy", movies.get(1).getGenre());
         System.out.println("Movie 2:");
         System.out.println("\tExpected: \tSatire|Comedy");
@@ -111,14 +111,7 @@ public class MovieAPIServiceTest {
     }
 
     @Test
-    public void     @Autowired
-    private TestEntityManager entityManager;
-
-    @Autowired
-    private MovieAPIService movieAPIService;
-
-    @Test
-    public void testFindByTitleContaining() {
+    public void testFindByTitle() {
         // --- Arrange ---
 
         // Create a new Movie object
@@ -128,12 +121,6 @@ public class MovieAPIServiceTest {
         // Save the movie to the test entity manager
         entityManager.persist(movie1);
 
-        // Create another new Movie object
-        Movie movie2 = new Movie();
-        // Set the title of the movie to "The Shawshank Redemption"
-        movie2.setTitle("The Shawshank Redemption");
-        // Save the movie to the test entity manager
-        entityManager.persist(movie2);
 
         // Flush the changes to the test entity manager to the database
         entityManager.flush();
@@ -141,43 +128,29 @@ public class MovieAPIServiceTest {
         // --- Act ---
 
         // Call the findByTitleContaining method of the MovieAPIService with parameter "The"
-        List<Movie> movies = movieAPIService.findByTitleContaining("The");
+        List<Movie> movies = movieAPIService.findByTitle("The Godfather");
 
         // --- Assert ---
 
         // Assert that the returned list has size of 2
-        assertEquals(2, movies.size());
+        assertEquals(1, movies.size());
 
         // Assert that the first movie's title is "The Godfather"
         assertEquals("The Godfather", movies.get(0).getTitle());
-        System.out.println("\nMovie 1:");
+        System.out.println("\nMovie 1's Title:");
         System.out.println("\tExpected: \tThe Godfather");
         System.out.println("\tActual: \t" + movies.get(0).getTitle());
-
-        // Assert that the second movie's title is "The Shawshank Redemption"
-        assertEquals("The Shawshank Redemption", movies.get(1).getTitle());
-        System.out.println("Movie 1:");
-        System.out.println("\tExpected: \tThe Shawshank Redemption");
-        System.out.println("\tActual: \t" + movies.get(1).getTitle() + "\n");
     }
 
     @Test
-    public void testFindByGenreContaining() {
-        // --- Arrange ---
-
+    public void testFindByGenre() {
         // Create a new Movie object
         Movie movie1 = new Movie();
-        // Set the Genre of the movie to "The Godfather"
+        // Set the Genre of the movie to "Horror|Comedy"
         movie1.setGenre("Horror|Comedy");
         // Save the movie to the test entity manager
         entityManager.persist(movie1);
 
-        // Create another new Movie object
-        Movie movie2 = new Movie();
-        // Set the genre of the movie to "The Shawshank Redemption"
-        movie2.setGenre("Satire|Comedy");
-        // Save the movie to the test entity manager
-        entityManager.persist(movie2);
 
         // Flush the changes to the test entity manager to the database
         entityManager.flush();
@@ -185,25 +158,21 @@ public class MovieAPIServiceTest {
         // --- Act ---
 
         // Call the findByGenreContaining method of the MovieAPIService with parameter "The"
-        List<Movie> movies = movieAPIService.findByGenreContaining("Comedy");
+        List<Movie> movies = movieAPIService.findByGenre("Horror|Comedy");
 
         // --- Assert ---
 
         // Assert that the returned list has size of 2
-        assertEquals(2, movies.size());
+        assertEquals(1, movies.size());
 
-        // Assert that the first movie's genre is "The Godfather"
+        // Assert that the first movie's genre is "Horror|Comedy"
         assertEquals("Horror|Comedy", movies.get(0).getGenre());
-        System.out.println("\nMovie 1:");
+        System.out.println("\nMovie 1's Genre:");
         System.out.println("\tExpected: \tHorror|Comedy");
         System.out.println("\tActual: \t" + movies.get(0).getGenre());
 
-        // Assert that the second movie's genre is "The Shawshank Redemption"
-        assertEquals("Satire|Comedy", movies.get(1).getGenre());
-        System.out.println("Movie 2:");
-        System.out.println("\tExpected: \tSatire|Comedy");
-        System.out.println("\tActual: \t" + movies.get(1).getGenre() + "\n");
     }
+
 
     // to test the findByReview method
     @Test
@@ -213,34 +182,9 @@ public class MovieAPIServiceTest {
         // Create a new Movie object
         Movie movie1 = new Movie();
         // Set the title of the movie to "The Godfather"
-        movie1.setTitle("The Godfather");
+        movie1.setReview(1);
         // Save the movie to the test entity manager
         entityManager.persist(movie1);
-
-        // Create another new Movie object
-        Movie movie2 = new Movie();
-        // Set the title of the movie to "The Shawshank Redemption"
-        movie2.setTitle("The Shawshank Redemption");
-        // Save the movie to the test entity manager
-        entityManager.persist(movie2);
-
-        // Create a new Review object
-        Review review1 = new Review();
-        // Set the review's movie to movie1
-        review1.setMovie(movie1);
-        // Set the review's rating to 5
-        review1.setRating(5);
-        // Save the review to the test entity manager
-        entityManager.persist(review1);
-
-        // Create another new Review object
-        Review review2 = new Review();
-        // Set the review's movie to movie2
-        review2.setMovie(movie2);
-        // Set the review's rating to 5
-        review2.setRating(5);
-        // Save the review to the test entity manager
-        entityManager.persist(review2);
 
         // Flush the changes to the test entity manager to the database
         entityManager.flush();
@@ -248,24 +192,19 @@ public class MovieAPIServiceTest {
         // --- Act ---
 
         // Call the findByReview method of the MovieAPIService with parameter 5
-        List<Movie> movies = movieAPIService.findByReview(5);
+        List<Movie> movies = movieAPIService.findByReview(1);
 
         // --- Assert ---
 
         // Assert that the returned list has size of 2
-        assertEquals(2, movies.size());
+        assertEquals(1, movies.size());
 
         // Assert that the first movie's title is "The Godfather"
-        assertEquals("The Godfather", movies.get(0).getTitle());
-        System.out.println("\nMovie 1:");
-        System.out.println("\tExpected: \tThe Godfather");
-        System.out.println("\tActual: \t" + movies.get(0).getTitle());
+        assertEquals(1, movies.get(0).getReview());
+        System.out.println("\nMovie 1 Review:");
+        System.out.println("\tExpected: \t1");
+        System.out.println("\tActual: \t" + movies.get(0).getReview());
 
-        // Assert that the second movie's title is "The Shawshank Redemption"
-        assertEquals("The Shawshank Redemption", movies.get(1).getTitle());
-        System.out.println("Movie 1:");
-        System.out.println("\tExpected: \tThe Shawshank Redemption");
-        System.out.println("\tActual: \t" + movies.get(1).getTitle() + "\n");
     }
 
 

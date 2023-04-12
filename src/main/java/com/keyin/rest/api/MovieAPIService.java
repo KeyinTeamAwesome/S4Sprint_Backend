@@ -27,6 +27,8 @@ public interface MovieAPIService extends JpaRepository<Movie, Long> {
     public List<Movie> findByTitleContaining(@Param("title")String title);
     public List<Movie> findByGenreContaining(@Param("genre")String genre);
 //    public List<Movie> findByYearContaining(@Param("year")int year);
+
+    //IS THIS NEEDED???
     public List<Movie> findByReviewContaining(@Param("review")int review);
 
     /* Full Match */

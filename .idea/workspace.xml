@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de8daaed-4ee0-48bb-9f1b-b5b1e9daf172" name="Changes" comment="Database SQL updates">
+    <list default="true" id="de8daaed-4ee0-48bb-9f1b-b5b1e9daf172" name="Changes" comment="Updated schema, data, MovieAPI and Movie files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/rest/api/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/rest/api/Movie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="database_setup" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -66,18 +65,61 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
+  <component name="RunManager" selected="JUnit.MovieAPIServiceTest">
+    <configuration name="MovieAPIServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S4Sprint_Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.rest.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.keyin.rest.api" />
+      <option name="MAIN_CLASS_NAME" value="com.keyin.rest.api.MovieAPIServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
+    <configuration name="MovieAPIServiceTest.testFindByGenreContaining" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S4Sprint_Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.rest.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.keyin.rest.api" />
+      <option name="MAIN_CLASS_NAME" value="com.keyin.rest.api.MovieAPIServiceTest" />
+      <option name="METHOD_NAME" value="testFindByGenreContaining" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MovieAPIServiceTest.testFindByTitleContaining" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S4Sprint_Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.rest.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.keyin.rest.api" />
+      <option name="MAIN_CLASS_NAME" value="com.keyin.rest.api.MovieAPIServiceTest" />
+      <option name="METHOD_NAME" value="testFindByTitleContaining" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MovieAPIServiceTest" />
+        <item itemvalue="JUnit.MovieAPIServiceTest.testFindByGenreContaining" />
+        <item itemvalue="JUnit.MovieAPIServiceTest.testFindByTitleContaining" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -116,7 +158,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681230224833</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated schema, data, MovieAPI and Movie files">
+      <created>1681232720380</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681232720380</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Updated schema, data, MovieAPI and Movie files">
+      <created>1681232850081</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681232850081</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,7 +180,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Testing_FindByReview" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -134,7 +202,8 @@
     <MESSAGE value="Pushing initial data to mySQL" />
     <MESSAGE value="Pushing resource files and app.prop. changes" />
     <MESSAGE value="Database SQL updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Database SQL updates" />
+    <MESSAGE value="Updated schema, data, MovieAPI and Movie files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated schema, data, MovieAPI and Movie files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

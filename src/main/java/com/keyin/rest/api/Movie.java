@@ -26,6 +26,16 @@ public class Movie {
 //    @Max(value = 5, message = "Review must be at most 5")
     private int review;
 
+    public Movie() {
+
+    }
+    public Movie(long id, String title, String genre, int review) {
+        this.id = id;
+        this.title = title;
+        this.genre = genre;
+        this.review = review;
+    }
+
     public long getId() {
         return id;
     }

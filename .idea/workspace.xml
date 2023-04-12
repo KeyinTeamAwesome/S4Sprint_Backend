@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="de8daaed-4ee0-48bb-9f1b-b5b1e9daf172" name="Changes" comment="Updated schema, data, MovieAPI and Movie files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/rest/api/MovieAPIService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/rest/api/MovieAPIService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/keyin/rest/api/MovieAPIServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/keyin/rest/api/MovieAPIServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/keyin/rest/api/MovieAPIServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/keyin/rest/api/MovieAPIServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -75,4 +75,17 @@ public class Movie {
     public void setReview(int review) {
         this.review = review;
     }
+
+    @Override
+    public String toString() {
+        return ("""
+                {
+                    "id":%d,
+                    "title":"%s",
+                    "genre":"%s",
+                    "review":%d
+                }
+                """
+                .formatted(id, title, genre, review));
+    }
 }

@@ -6,18 +6,15 @@ import javax.validation.constraints.Min;
 
 @Entity
 public class Movie {
-/*
-    {
-        "id":1,
-            "title":"Search for the Beast",
-            "genre":"Horror",
-            "year":2008,
-    }
-*/
-@Id
-//    @SequenceGenerator(name = "movie_sequence", sequenceName = "movie_sequence", allocationSize = 1, initialValue = 1)
-//    @GeneratedValue(generator = "movie_sequence")
-
+    /*
+        {
+            "id":1,
+                "title":"Search for the Beast",
+                "genre":"Horror",
+                "year":2008,
+        }
+    */
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private long id;
@@ -25,8 +22,8 @@ public class Movie {
     private String genre;
 //    private int year;
 
-    @Min(value = 1, message = "Review must be at least 1")
-    @Max(value = 5, message = "Review must be at most 5")
+//    @Min(value = 1, message = "Review must be at least 1")
+//    @Max(value = 5, message = "Review must be at most 5")
     private int review;
 
     public long getId() {

@@ -1,8 +1,5 @@
 package com.keyin.rest.api;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -13,6 +10,8 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import com.keyin.rest.api.Movie;
 import com.keyin.rest.api.MovieAPIService;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @DataJpaTest
 public class MovieAPIServiceTest {
 
@@ -21,6 +20,218 @@ public class MovieAPIServiceTest {
 
     @Autowired
     private MovieAPIService movieAPIService;
+
+    @Test
+    public void testFindByAllContainingTitleSearch() {
+
+        // --- Arrange ---
+
+        // Create a new Movie object
+        Movie movie1 = new Movie();
+        // Set the title of the movie to "The Godfather"
+        movie1.setTitle("The Godfather");
+        movie1.setGenre("Horror|Comedy");
+        movie1.setReview(1);
+        // Save the movie to the test entity manager
+        entityManager.persist(movie1);
+
+        // Create another new Movie object
+        Movie movie2 = new Movie();
+        // Set the title of the movie to "The Shawshank Redemption"
+        movie2.setTitle("The Shawshank Redemption");
+        movie2.setGenre("Satire|Comedy");
+        movie2.setReview(1);
+        // Save the movie to the test entity manager
+        entityManager.persist(movie2);
+
+        // Create another new Movie object
+        Movie movie3 = new Movie();
+        // Set the title of the movie to "The Shawshank Redemption"
+        movie3.setTitle("A Star Is Born");
+        movie3.setGenre("Drama");
+        movie3.setReview(5);
+        // Save the movie to the test entity manager
+        entityManager.persist(movie3);
+
+        // Flush the changes to the test entity manager to the database
+        entityManager.flush();
+
+        // --- Act ---
+
+        // Call the findByAllContaining method of the MovieAPIService with the search term as the argument
+        List<Movie> movies = movieAPIService.findByAllContaining("The");
+
+        // --- Assert ---
+
+        System.out.println("\n# of Records Found:");
+        assertEquals(2, movies.size());
+        System.out.println("""     
+                \t    Expected: \t2
+                \t    Actual:   \t""" + movies.size() + "\n");
+
+        System.out.println("Is Record Found?:");
+        assertTrue(movies.contains(movie1));
+        System.out.println("""
+                \tMovie 1:
+                \t    Expected: \ttrue
+                \t    Actual:   \t""" + movies.contains(movie1));
+        assertTrue(movies.contains(movie2));
+        System.out.println("""
+                \tMovie 2:
+                \t    Expected: \ttrue
+                \t    Actual:   \t""" + movies.contains(movie2));
+        assertFalse(movies.contains(movie3));
+        System.out.println("""
+                \tMovie 3:
+                \t    Expected: \tfalse
+                \t    Actual:   \t""" + movies.contains(movie3) + "\n");
+
+        System.out.println("\"Title\" Field Value:");
+        assertEquals("The Godfather", movies.get(0).getTitle());
+        System.out.println("""
+                \tMovie 1:
+                \t    Expected: \tThe Godfather
+                \t    Actual:   \t""" + movies.get(0).getTitle());
+        assertEquals("The Shawshank Redemption", movies.get(1).getTitle());
+        System.out.println("""
+                \tMovie 2:
+                \t    Expected: \tThe Shawshank Redemption
+                \t    Actual:   \t""" + movies.get(1).getTitle() + "\n");
+    }
+
+    @Test
+    public void testFindByAllContainingGenreSearch() {
+
+        // --- Arrange ---
+
+        Movie movie1 = new Movie();
+
+        movie1.setTitle("The Godfather");
+        movie1.setGenre("Horror|Comedy");
+        movie1.setReview(1);
+        entityManager.persist(movie1);
+
+        Movie movie2 = new Movie();
+        movie2.setTitle("The Shawshank Redemption");
+        movie2.setGenre("Satire|Comedy");
+        movie2.setReview(1);
+        entityManager.persist(movie2);
+
+        Movie movie3 = new Movie();
+        movie3.setTitle("A Star Is Born");
+        movie3.setGenre("Drama");
+        movie3.setReview(5);
+        entityManager.persist(movie3);
+
+        entityManager.flush();
+
+        // --- Act ---
+
+        List<Movie> movies = movieAPIService.findByAllContaining("Comedy");
+
+        // --- Assert ---
+
+        System.out.println("\n# of Records Found:");
+        System.out.println("""
+                \t    Expected: \t2
+                \t    Actual:   \t""" + movies.size() + "\n");
+
+        System.out.println("Is Record Found?:");
+        assertTrue(movies.contains(movie1));
+        System.out.println("""
+                \tMovie 1:
+                \t    Expected: \ttrue
+                \t    Actual:   \t""" + movies.contains(movie1));
+        assertTrue(movies.contains(movie2));
+        System.out.println("""
+                \tMovie 2:
+                \t    Expected: \ttrue
+                \t    Actual:   \t""" + movies.contains(movie2));
+        assertFalse(movies.contains(movie3));
+        System.out.println("""
+                \tMovie 3:
+                \t    Expected: \tfalse
+                \t    Actual:   \t""" + movies.contains(movie3) + "\n");
+
+        System.out.println("\"Genre\" Field Value:");
+        assertEquals("Horror|Comedy", movies.get(0).getGenre());
+        System.out.println("""
+                \tMovie 1:
+                \t    Expected: \tHorror|Comedy
+                \t    Actual:   \t""" + movies.get(0).getGenre());
+        assertEquals("Satire|Comedy", movies.get(1).getGenre());
+        System.out.println("""
+                \tMovie 2:
+                \t    Expected: \tSatire|Comedy
+                \t    Actual:   \t""" + movies.get(1).getGenre() + "\n");
+    }
+
+    @Test
+    public void testFindByAllContainingReviewSearch() {
+
+        // --- Arrange ---
+
+        Movie movie1 = new Movie();
+        movie1.setTitle("The Godfather");
+        movie1.setGenre("Horror|Comedy");
+        movie1.setReview(1);
+        entityManager.persist(movie1);
+
+        Movie movie2 = new Movie();
+        movie2.setTitle("The Shawshank Redemption");
+        movie2.setGenre("Satire|Comedy");
+        movie2.setReview(1);
+        entityManager.persist(movie2);
+
+        Movie movie3 = new Movie();
+        movie3.setTitle("A Star Is Born");
+        movie3.setGenre("Drama");
+        movie3.setReview(5);
+        entityManager.persist(movie3);
+
+        entityManager.flush();
+
+        // --- Act ---
+
+        List<Movie> movies = movieAPIService.findByAllContaining("1");
+
+        // --- Assert ---
+
+        System.out.println("\n# of Records Found:");
+        assertEquals(2, movies.size());
+        System.out.println("""     
+                \t    Expected: \t2
+                \t    Actual:   \t""" + movies.size() + "\n");
+
+        System.out.println("Is Record Found?:");
+        assertTrue(movies.contains(movie1));
+        System.out.println("""
+                \tMovie 1:
+                \t    Expected: \ttrue
+                \t    Actual:   \t""" + movies.contains(movie1));
+        assertTrue(movies.contains(movie2));
+        System.out.println("""
+                \tMovie 2:
+                \t    Expected: \ttrue
+                \t    Actual:   \t""" + movies.contains(movie2));
+        assertFalse(movies.contains(movie3));
+        System.out.println("""
+                \tMovie 3:
+                \t    Expected: \tfalse
+                \t    Actual:   \t""" + movies.contains(movie3) + "\n");
+
+        System.out.println("\"Review\" Field Value:");
+        assertEquals(1, movies.get(0).getReview());
+        System.out.println("""
+                \tMovie 1:
+                \t    Expected: \t1
+                \t    Actual:   \t""" + movies.get(0).getReview());
+        assertEquals(1, movies.get(1).getReview());
+        System.out.println("""
+                \tMovie 2:
+                \t    Expected: \t1
+                \t    Actual:   \t""" + movies.get(1).getReview() + "\n");
+    }
 
     @Test
     public void testFindByTitleContaining() {
@@ -110,3 +321,4 @@ public class MovieAPIServiceTest {
         System.out.println("\tActual: \t" + movies.get(1).getGenre() + "\n");
     }
 }
+

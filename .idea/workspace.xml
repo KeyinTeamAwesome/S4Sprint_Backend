@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de8daaed-4ee0-48bb-9f1b-b5b1e9daf172" name="Changes" comment="Updated schema, data, MovieAPI and Movie files">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/keyin/rest/api/RestServiceApplicationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/rest/api/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/rest/api/Movie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/keyin/rest/api/MovieAPIServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/keyin/rest/api/MovieAPIServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +21,7 @@
       <list>
         <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,7 +70,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MovieAPIServiceTest">
+  <component name="RunManager" selected="JUnit.RestServiceApplicationTest">
     <configuration name="MovieAPIServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S4Sprint_Backend" />
       <extension name="coverage">
@@ -113,8 +118,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RestServiceApplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S4Sprint_Backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.rest.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.keyin.rest.api" />
+      <option name="MAIN_CLASS_NAME" value="com.keyin.rest.api.RestServiceApplicationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RestServiceApplicationTest" />
         <item itemvalue="JUnit.MovieAPIServiceTest" />
         <item itemvalue="JUnit.MovieAPIServiceTest.testFindByGenreContaining" />
         <item itemvalue="JUnit.MovieAPIServiceTest.testFindByTitleContaining" />

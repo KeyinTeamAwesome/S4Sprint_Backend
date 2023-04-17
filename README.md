@@ -43,7 +43,6 @@ ________________________________________________________________________________
 |   **GET**   | Find by Title (Partial Match)  | localhost:8080/movie/search/findByTitleContaining  | ?title=\<*String*>                                |
 |   **GET**   | Find by Genre (Partial Match)  | localhost:8080/movie/search/findByGenreContaining  | ?genre=\<*String*>                                |
 |   **GET**   | Find by Year (Partial Match)   | localhost:8080/movie/search/findByYearContaining   | ?year=\<*int*>                                    |
-|   **GET**   | Find by Review (Partial Match) | localhost:8080/movie/search/findByReviewContaining | ?review=\<*int*>                                  |
 |   **GET**   | Find by Title (Full Match)     | localhost:8080/movie/search/findByTitle            | ?title=\<*String*>                                |
 |   **GET**   | Find by Genre (Full Match)     | localhost:8080/movie/search/findByGenre            | ?genre=\<*String*>                                |
 |   **GET**   | Find by Year (Full Match)      | localhost:8080/movie/search/findByYear             | ?year=\<*int*>                                    |

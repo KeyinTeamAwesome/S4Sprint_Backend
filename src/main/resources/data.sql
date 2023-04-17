@@ -998,3 +998,4 @@ insert into movie (title, genre, review) values ('Brave One, The', 'Crime|Drama|
 insert into movie (title, genre, review) values ('Class, The (Klass)', 'Drama', 3);
 insert into movie (title, genre, review) values ('Crazy/Beautiful', 'Drama|Romance', 1);
 insert into movie (title, genre, review) values ('Thesis (Tesis)', 'Drama|Horror|Thriller', 3);
+

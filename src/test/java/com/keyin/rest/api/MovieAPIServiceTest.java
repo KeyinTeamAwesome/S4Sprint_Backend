@@ -256,7 +256,7 @@ public class MovieAPIServiceTest {
 
         // --- Act ---
 
-        // Call the findByTitleContaining method of the MovieAPIService with parameter "The"
+        // Call the findByAllContaining method of the MovieAPIService with the search term as the argument
         List<Movie> movies = movieAPIService.findByTitleContaining("The");
 
         // --- Assert ---
@@ -300,7 +300,7 @@ public class MovieAPIServiceTest {
 
         // --- Act ---
 
-        // Call the findByGenreContaining method of the MovieAPIService with parameter "The"
+        // Call the findByAllContaining method of the MovieAPIService with the search term as the argument
         List<Movie> movies = movieAPIService.findByGenreContaining("Comedy");
 
         // --- Assert ---
@@ -338,7 +338,7 @@ public class MovieAPIServiceTest {
 
         // --- Act ---
 
-        // Call the findByTitleContaining method of the MovieAPIService with parameter "The"
+        // Call the findByAllContaining method of the MovieAPIService with the search term as the argument
         List<Movie> movies = movieAPIService.findByTitle("The Godfather");
 
         // --- Assert ---
@@ -368,7 +368,7 @@ public class MovieAPIServiceTest {
 
         // --- Act ---
 
-        // Call the findByGenreContaining method of the MovieAPIService with parameter "The"
+        // Call the findByAllContaining method of the MovieAPIService with the search term as the argument
         List<Movie> movies = movieAPIService.findByGenre("Horror|Comedy");
 
         // --- Assert ---
@@ -384,8 +384,6 @@ public class MovieAPIServiceTest {
 
     }
 
-
-    // to test the findByReview method
     @Test
     public void testFindByReview() {
         // --- Arrange ---
@@ -402,7 +400,7 @@ public class MovieAPIServiceTest {
 
         // --- Act ---
 
-        // Call the findByReview method of the MovieAPIService with parameter 5
+        // Call the findByAllContaining method of the MovieAPIService with the search term as the argument
         List<Movie> movies = movieAPIService.findByReview(1);
 
         // --- Assert ---
@@ -418,5 +416,5 @@ public class MovieAPIServiceTest {
 
     }
 
-
 }
+

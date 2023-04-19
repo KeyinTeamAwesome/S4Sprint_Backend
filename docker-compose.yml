@@ -1,12 +1,13 @@
-version: '3'
+version: '1'
 services:
   myapp-main:
-    image: final_sdat_qap_2023:latest
+    image: movieapi:latest
     ports:
       - 8080:8080
     environment:
-      - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/final_sdat_qap_2023
-      #- spring.datasource.url=jdbc:mysql://s4-fall-2022.ce2vcezehro2.us-east-1.rds.amazonaws.com/fall_2022
-      - spring.datasource.password=51Salisbury#
+#      - spring.datasource.url=jdbc:mysql://host.docker.internal:3306/final_sdat_qap_2023
+      - spring.datasource.url=jdbc:mysql://database-1.ceu5peoa6v6x.us-east-1.rds.amazonaws.com/final_sprint
+      - spring.datasource.password=password
       - spring.datasource.username=root
       - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+

@@ -2,7 +2,6 @@ package com.keyin.rest.api;
 
 import javax.persistence.*;
 
-
 @Entity
 public class Movie {
 

@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
-import com.keyin.rest.api.Movie;
-import com.keyin.rest.api.MovieAPIService;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -28,7 +26,6 @@ public class MovieAPIServiceTest {
 
         // Create a new Movie object
         Movie movie1 = new Movie();
-        // Set the title of the movie to "The Godfather"
         movie1.setTitle("The Godfather");
         movie1.setGenre("Horror|Comedy");
         movie1.setReview(1);
@@ -37,7 +34,6 @@ public class MovieAPIServiceTest {
 
         // Create another new Movie object
         Movie movie2 = new Movie();
-        // Set the title of the movie to "The Shawshank Redemption"
         movie2.setTitle("The Shawshank Redemption");
         movie2.setGenre("Satire|Comedy");
         movie2.setReview(1);
@@ -46,7 +42,6 @@ public class MovieAPIServiceTest {
 
         // Create another new Movie object
         Movie movie3 = new Movie();
-        // Set the title of the movie to "The Shawshank Redemption"
         movie3.setTitle("A Star Is Born");
         movie3.setGenre("Drama");
         movie3.setReview(5);
@@ -239,14 +234,12 @@ public class MovieAPIServiceTest {
 
         // Create a new Movie object
         Movie movie1 = new Movie();
-        // Set the title of the movie to "The Godfather"
         movie1.setTitle("The Godfather");
         // Save the movie to the test entity manager
         entityManager.persist(movie1);
 
         // Create another new Movie object
         Movie movie2 = new Movie();
-        // Set the title of the movie to "The Shawshank Redemption"
         movie2.setTitle("The Shawshank Redemption");
         // Save the movie to the test entity manager
         entityManager.persist(movie2);
@@ -283,14 +276,12 @@ public class MovieAPIServiceTest {
 
         // Create a new Movie object
         Movie movie1 = new Movie();
-        // Set the Genre of the movie to "The Godfather"
         movie1.setGenre("Horror|Comedy");
         // Save the movie to the test entity manager
         entityManager.persist(movie1);
 
         // Create another new Movie object
         Movie movie2 = new Movie();
-        // Set the genre of the movie to "The Shawshank Redemption"
         movie2.setGenre("Satire|Comedy");
         // Save the movie to the test entity manager
         entityManager.persist(movie2);
@@ -327,7 +318,6 @@ public class MovieAPIServiceTest {
 
         // Create a new Movie object
         Movie movie1 = new Movie();
-        // Set the title of the movie to "The Godfather"
         movie1.setTitle("The Godfather");
         // Save the movie to the test entity manager
         entityManager.persist(movie1);
@@ -357,7 +347,6 @@ public class MovieAPIServiceTest {
     public void testFindByGenre() {
         // Create a new Movie object
         Movie movie1 = new Movie();
-        // Set the Genre of the movie to "Horror|Comedy"
         movie1.setGenre("Horror|Comedy");
         // Save the movie to the test entity manager
         entityManager.persist(movie1);
@@ -390,7 +379,6 @@ public class MovieAPIServiceTest {
 
         // Create a new Movie object
         Movie movie1 = new Movie();
-        // Set the title of the movie to "The Godfather"
         movie1.setReview(1);
         // Save the movie to the test entity manager
         entityManager.persist(movie1);

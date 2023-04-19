@@ -1,19 +1,11 @@
 package com.keyin.rest.api;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+
 
 @Entity
 public class Movie {
-    /*
-    Sample JSON:    {
-                        "id":1,
-                        "title":"Search for the Beast",
-                        "genre":"Horror",
-                        "year":2008,
-                    }
-    */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 

@@ -2,10 +2,6 @@
   Semester 4 | Final Sprint
 </h1>
 
-[description goes here]
-____________________________________________________________________________________________________________________
-
-
 ### **Entity Information**
 
 | Entity Name  | Fields                                                  | Sample JSON                                                                    |

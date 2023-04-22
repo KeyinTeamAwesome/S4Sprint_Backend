@@ -2,6 +2,10 @@
   Semester 4 | Final Sprint
 </h1>
 
+### Description
+
+This is a reimplementation of [an earlier project](https://github.com/KeyinTeamAwesome/S3_Final-Sprint). It consists of a movie database API created with SpringBoot + JPA. This API is utilised in our [client](https://github.com/KeyinTeamAwesome/S4Sprint_Client), which provides a user interface for searching the database.
+
 ### **Entity Information**
 
 | Entity Name  | Fields                                                  | Sample JSON                                                                    |
